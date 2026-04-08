@@ -70,10 +70,8 @@ app.post("/login", async (req, res) => {
       expiresIn: "1h",
     });
 
-    console.log("Login secret:", process.env.JWT_SECRET);
     res.json({ token });
   } catch (error) {
-    console.log("Erro no login:", error);
     res.status(500).json({
       mensagem: "Erro interno do servidor",
     });
