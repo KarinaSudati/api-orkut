@@ -37,7 +37,8 @@ app.post("/usuarios", validarUsuarios, async (req, res) => {
     });
   } catch (erro) {
     res.status(500).json({
-      erro: "Erro ao criar usuário",
+      mensagem: "Erro detalhado",
+      detalhe: erro.message,
     });
   }
 });
